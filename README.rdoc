@@ -3,6 +3,7 @@ University of Edinburgh
 
 This Matlab code analytically calculates the elastic x-ray form-factor, f(q), from a multiconfigurational ab initio calculation performed with Molpro. Specifically from the Molden output file (h2.mld given). This means the appropriate output command must be used in Molpro (i.e. put,molden,h2.mld).
 Theory is shown in Northey, Zotev, Kirrander, "Ab Initio Molecular Diffraction", JCTC 2014.
+Also see presentation at http://prezi.com/fswqdydpfvjp/?utm_campaign=share&utm_medium=copy
 
 The example output file (h2.mld) is from a H2 Hartree-Fock calculation (input file given: h2.com) with minimal basis set.
 The intensity |f(q)|^2 is plotted as a function of theta and phi using the function polarplot3d.
