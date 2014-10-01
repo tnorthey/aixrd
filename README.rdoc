@@ -1,0 +1,7 @@
+
+To use code (Matlab) type e.g.,
+
+aixrd_Jul7('h2.mld',30,0);
+
+
+Thomas
