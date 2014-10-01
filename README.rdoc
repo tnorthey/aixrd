@@ -1,7 +1,7 @@
 Thomas Northey, 1/10/14
 University of Edinburgh
 
-This Matlab code analytically calculates the x-ray form-factor, f(q), from an ab initio calculation.
+This Matlab code analytically calculates the elastic x-ray form-factor, f(q), from an ab initio calculation.
 Theory is shown in Northey, Zotev, Kirrander, "Ab Initio Molecular Diffraction", JCTC 2014.
 
 The example output file given is from a H2 Hartree-Fock calculation with minimal basis set.
