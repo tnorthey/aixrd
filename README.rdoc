@@ -12,3 +12,6 @@ To use code type e.g.,
 
 aixrd_Jul7('h2.mld',30,0);
 
+Added:
+Faster, more general aixrd_Jul9.
+
