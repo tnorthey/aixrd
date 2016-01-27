@@ -82,56 +82,31 @@ tic  % start timer
 [~,rtitle,~] = fileparts(mldfile);    % define title from mldfile.
 rtitle=strcat(rtitle,'_',method,'_',dim,'_Nq',num2str(Nq),'_wl',num2str(wl));
 
-Nq=2*ceil(Nq/2)-1;  % want Nq to be odd so q=0 is in linspace(-qmax,qmax,Nq)
-                    % because q=0 is important (central maximum)
-
-k0=2*pi/wl;         % incoming vector magnitude |k|
-qmax=2*k0;          % q = k0 - k, where |k0|=|k| (elastic), so qmax=2|k|
-if Nq==1
-    q=0;
-else
-    q=linspace(0,qmax,Nq);  % define momentum transfer vector q
-end
-
-% coordinate choice (dim='x','y','z','xy','xz','yz','xyz','sph')
-[qx,qy,qz,Fq,C] = choosecoord2(dim,q);
-
-if size(C,1)==3
-    r=C{1};
-    th=C{2};
-    ph=C{3};
-end
-
-Q=cell(3,1);  % make convenient cell arrays
-Qe=Q; Qi=Q;
-Q{1}=qx; Q{2}=qy; Q{3}=qz;
-for k=1:3
-    Qe{k}=-.25*Q{k}.^2;
-    Qi{k}=.5i*Q{k};
-end
-
 %========================================
 % calculate Fq
-[Fat,Fmol,Atoms]=AIXRD2016_calcFq(method,dim,mldfile,Nq,Q,Qe,Qi,Fq,q);
-Fq=Fat+Fmol;
+if strcmpi(method,'iam')
+    [Fq,Atoms,C]=AIXRD2016_calcFq_iam(mldfile,Nq,wl,dim);
+elseif strcmpi(method,'ai')
+    [Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim);
+end
 Iq=abs(Fq).^2;     % Intensity is form-factor absolute squared ff*
 %================================================================================
 % ROTATIONAL AVERAGE (if using spherical coordinates in q)
 if strcmp(dim,'sph')
-    Irot=rotavg0(th,ph,Iq);  % ensemble-average (each particle scatters incoherently)
-    Ideb=iamcalc2(Atoms(:,2:end),q);  % Debye approx.
-    Frot=rotavg0(th,ph,Fq);  % particle scatters coherently (with itself usually)
+    Irot=rotavg0(C{2},C{3},Iq);  % ensemble-average (each particle scatters incoherently)
+    Ideb=iamcalc2(Atoms(:,2:end),C{1});  % Debye approx.
+    Frot=rotavg0(C{2},C{3},Fq);  % particle scatters coherently (with itself usually)
 end
 %================================================================================
 % SAVE to output
 % save output variables in .mat file
 matname=strcat('results/',rtitle,'.mat');
 if strcmp(dim,'sph') 
-    save(matname,'rtitle','Fat','Fmol','r','th','ph','Frot','Irot','Ideb');
+    save(matname,'rtitle','Fq','C','Frot','Irot','Ideb');
 elseif strfind(dim,'det')
-    save(matname,'rtitle','Fat','Fmol','r','th','ph');
+    save(matname,'rtitle','Fq','C');
 else
-    save(matname,'rtitle','Fat','Fmol','q');
+    save(matname,'rtitle','Fq','C');
 end
 %================================================================================
 toc  % stop timer
