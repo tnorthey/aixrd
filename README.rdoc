@@ -1,6 +1,6 @@
 How to run AIXRD
-T. Northey 2015
-Main code: AIXRD_v3_stable.m
+T. Northey, January 2016
+Main code: AIXRD2016.m
 
 Usage:
 Modify setup2.txt, containing 5 columns, title, Nq, wl, dim, method.
@@ -23,7 +23,7 @@ title  Nq  wl  dim  method
 hehe 49 3 detz ai
 %-------------------------------%
 
-In this case, running AIXRD_v3_stable.m will use data from the file 
+In this case, running AIXRD2016.m will use data from the file 
 input/hehe.mld (dihelium molden file from molpro).
 Appropriate results get saved to results/ folder in .mat format.
 
