@@ -1,4 +1,4 @@
-function[Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim)
+function[Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim,b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc)
 
 % Setup q-array,
 [C,Q,Qe,Qi,Fq,~] = setupq(Nq,wl,dim);
@@ -12,8 +12,7 @@ Fii=zeros(size(Fq));
 Fij=Fii;
 
 % Ab initio x-ray diffraction method,
-disp('Using ab initio method...')
-[b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc,~,~,~,~,~] = mldread_g(mldfile,0);    
+disp('Using ab initio method...')    
 cutoff=1e-9;    
 Ng=length(c); % number of primitives
 

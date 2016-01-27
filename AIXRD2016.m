@@ -87,7 +87,8 @@ rtitle=strcat(rtitle,'_',method,'_',dim,'_Nq',num2str(Nq),'_wl',num2str(wl));
 if strcmpi(method,'iam')
     [Fq,Atoms,C]=AIXRD2016_calcFq_iam(mldfile,Nq,wl,dim);
 elseif strcmpi(method,'ai')
-    [Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim);
+    [b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc,~,~,~,~,~] = mldread_g(mldfile,0);
+    [Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim,b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc);
 end
 Iq=abs(Fq).^2;     % Intensity is form-factor absolute squared ff*
 %================================================================================
