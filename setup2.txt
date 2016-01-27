@@ -1,0 +1,3 @@
+title  Nq  wl  dim  method
+
+benzene_6-31g_optg 49 3 detz ai

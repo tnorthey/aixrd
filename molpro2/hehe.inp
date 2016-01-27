@@ -1,0 +1,21 @@
+***,MOLPRO_SCF TEMPLATE     ! title
+                                                       
+! basis set,
+$bset=6-31g
+basis=$bset                                              
+
+r12=3 BOHR;
+
+geometry={
+
+He1
+He2 He1 r12
+}
+
+hf
+
+$title='../input/hehe.mld'
+put,molden,$title
+
+---                         ! end of file
+can write notes here :)

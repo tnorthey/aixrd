@@ -1,0 +1,22 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> Atomsread: Read from file input/hehe.mld
+Using ab initio method...
+mldread: Read from file input/hehe.mld
+mldread: inputs generated
+This will take ~0 seconds (single 3.1 GHz core)
+(Lower precision to decrease time.)
+True Nelec=4
+Integrated Nelec=4
+Elapsed time is 0.118936 seconds.
+Elapsed time is 0.126348 seconds.
+Done.
+>> 
