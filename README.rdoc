@@ -1,20 +1,35 @@
-Thomas Northey, 1/10/14
-University of Edinburgh
+How to run AIXRD
+T. Northey 2015
+Main code: AIXRD_v3_stable.m
 
-This Matlab code analytically calculates the elastic x-ray form-factor, f(q), from a multiconfigurational ab initio calculation performed with Molpro. Specifically from the Molden output file (h2.mld given). This means the appropriate output command must be used in Molpro (i.e. put,molden,h2.mld).
-Theory is shown in Northey, Zotev, Kirrander, "Ab Initio Molecular Diffraction", JCTC 2014.
-Also see presentation at http://prezi.com/fswqdydpfvjp/?utm_campaign=share&utm_medium=copy
+Usage:
+Modify setup2.txt, containing 5 columns, title, Nq, wl, dim, method.
+title: Arbitrary title, output .mat file will contain this title
+Nq: Number of points in q-vector 
+wl: x-ray wavelength in atomic units (Bohr)
+dim: dimension, can be x,y,z which gives 1D slices through q of size (Nq,1);
+detx, dety, detz, which give 2D detector images (functions of scattering 
+angles theta, phi) of size (Nq,Nq) for incoming x-rays from the x, y, and z 
+direction respectively; xyz, which gives a 3D grid in q of size (Nq,Nq,Nq); 
+finally sph, which gives a 3D grid in q in spherical coordinates of size 
+(Nq,Nq,Nq), and by default gives rotational-average and Debye approximation.
+method: Either iam or ai, which means independent atom model (IAM, v. fast) 
+approximation, or ab initio x-ray diffraction (AIXRD, slow) from [1]. 
 
-The example output file (h2.mld) is from a H2 Hartree-Fock calculation (input file given: h2.com) with minimal basis set.
-The intensity |f(q)|^2 is plotted as a function of theta and phi using the function polarplot3d.
+setup2.txt looks like:
+%-------------------------------%
+title  Nq  wl  dim  method
 
-To use code type e.g.,
+hehe 49 3 detz ai
+%-------------------------------%
 
-aixrd_Jul7('h2.mld',30,0);
+In this case, running AIXRD_v3_stable.m will use data from the file 
+input/hehe.mld (dihelium molden file from molpro).
+Appropriate results get saved to results/ folder in .mat format.
 
-Added:
-Faster, more general aixrd_Jul9.
-
-January 2016:
-
-
+Reference:
+[1]. Thomas Northey, Nikola Zotev, and Adam Kirrander
+School of Chemistry, University of Edinburgh, West Mains Road, Edinburgh EH9 3JJ, United Kingdom
+J. Chem. Theory Comput., 2014, 10 (11), pp 4911–4920
+DOI: 10.1021/ct500096r
+Publication Date (Web): October 10, 2014
