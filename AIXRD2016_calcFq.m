@@ -1,6 +1,5 @@
-function[Fat,Fmol,Atoms]=AIXRD2015_calcFq_v3pt1(method,dim,mldfile,Nq,Q,Qe,Qi,Fq,q)
+function[Fat,Fmol,Atoms]=AIXRD2016_calcFq(method,dim,mldfile,Nq,Q,Qe,Qi,Fq,q)
 
-tic
 % Read Atom information from molden file,
 Atoms = Atomsread(mldfile);
 
@@ -255,5 +254,5 @@ Nelec=maxFq;
 Nelec0=sum(Atoms(:,2));       % Nelec from molden file
 disp(strcat('True Nelec=',num2str(Nelec0)));
 disp(strcat('Integrated Nelec=',num2str(Nelec))); % to check
-toc
+
 return

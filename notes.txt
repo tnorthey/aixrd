@@ -1,7 +1,0 @@
-
-Introduced terms F[gi^2] and F[gi*gj] which speeds up code,
-called them atomic and molecular terms which is incorrect,
-atomic terms have ri=rj, not gi=gj in general
-
-may be able to speed up again by using only atomic terms for core electrons and molecular terms for valence electrons
-

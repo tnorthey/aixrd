@@ -50,7 +50,7 @@
 %% Theory
 % The theory is shown in the reference paper.
 %% Function begins
-function [] = AIXRD2015_v3pt1_stable()
+function [] = AIXRD2016()
 
 % Calculates elastic x-ray diffraction from a list file, 'setup.txt'.
 
@@ -112,7 +112,7 @@ end
 
 %========================================
 % calculate Fq
-[Fat,Fmol,Atoms]=AIXRD2015_calcFq_v3pt1(method,dim,mldfile,Nq,Q,Qe,Qi,Fq,q);
+[Fat,Fmol,Atoms]=AIXRD2016_calcFq(method,dim,mldfile,Nq,Q,Qe,Qi,Fq,q);
 Fq=Fat+Fmol;
 Iq=abs(Fq).^2;     % Intensity is form-factor absolute squared ff*
 %================================================================================
