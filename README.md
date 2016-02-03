@@ -10,11 +10,9 @@ Modify setup2.txt, which contains 5 columns, title, Nq, wl, dim, method.
 *Nq* (integer): Number of points in momentum transfer vector (q, inverse bohr).  
 *wl* (float): X-ray wavelength in atomic units (Bohr).  
 *dim* (string): Dimension. Can either be x, y, or z which gives 1D slices through q of size (Nq,1); detx, dety, detz, which give 2D detector images (functions of scattering angles theta, phi) of size (Nq,Nq) for incoming x-rays from the x, y, and z direction respectively; xyz, which gives a 3D grid in q of size (Nq,Nq,Nq); finally sph, which gives a 3D grid in q in spherical coordinates of size (Nq,Nq,Nq), and by default gives rotationally-averaged curve and Debye approximation (for comparison).  
-*method* (string): Either iam or ai. That is, independent atom model (IAM, v. fast), or ab initio x-ray diffraction (AIXRD, slow) from [1]. 
+*method* (string): Either iam or ai. That is, independent atom model (IAM, v. fast), or ab initio x-ray diffraction (AIXRD) [1]. 
 
----
-
-### setup2.txt format:
+#### setup2.txt format:
 
 % beginning of file   
 title  Nq  wl  dim  method
