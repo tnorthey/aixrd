@@ -4,7 +4,8 @@
 
 Main code: AIXRD2016.m
 
-Modify setup2.txt, which contains 5 columns, title, Nq, wl, dim, method.  
+Modify setup2.txt, which contains 5 columns, title, Nq, wl, dim, method. 
+ 
 *title*: results/'output'.mat will be created with 'output' based on 'title'.  
 *Nq*: Number of points in momentum transfer vector (q, inverse bohr).  
 *wl*: X-ray wavelength in atomic units (Bohr).  
@@ -27,7 +28,7 @@ Results get saved to results/ folder in .mat format.
 
 ## Reference
 
-[1]. Thomas Northey, Nikola Zotev, and Adam Kirrander, J. Chem. Theory Comput., 2014, 10 (11), 4911–4920. 
+[1](http://pubs.acs.org/doi/abs/10.1021/ct500096r). Thomas Northey, Nikola Zotev, and Adam Kirrander, J. Chem. Theory Comput., 2014, 10 (11), 4911–4920.   
 DOI: 10.1021/ct500096r
 
 ---
