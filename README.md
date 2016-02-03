@@ -14,7 +14,7 @@ Modify setup2.txt, which contains 5 columns, title, Nq, wl, dim, method.
 
 ---
 
-setup2.txt format:
+### setup2.txt format:
 
 % beginning of file   
 title  Nq  wl  dim  method
@@ -28,7 +28,7 @@ Results get saved to results/ folder in .mat format.
 
 ## Reference
 
-1. [Thomas Northey, Nikola Zotev, and Adam Kirrander, J. Chem. Theory Comput., 2014, 10 (11), 4911–4920.](http://pubs.acs.org/doi/abs/10.1021/ct500096r)   
-DOI: 10.1021/ct500096r
+1. Thomas Northey, Nikola Zotev, and Adam Kirrander, J. Chem. Theory Comput., 2014, 10 (11), 4911–4920.  
+DOI: [10.1021/ct500096r](http://dx.doi.org/10.1021/ct500096r)
 
 ---
