@@ -53,7 +53,7 @@
 function [] = AIXRD2016()
 
 % Calculates elastic x-ray diffraction from a list file, 'setup.txt'.
-
+addpath(strcat(pwd,'/myfunctions'))
 fid = fopen('setup2.txt', 'r'); % Open file for reading                                              
 tline = fgetl(fid); % Read line from file, removing newline characters
 tline = fgetl(fid); % Read line from file, removing newline characters
@@ -87,8 +87,7 @@ rtitle=strcat(rtitle,'_',method,'_',dim,'_Nq',num2str(Nq),'_wl',num2str(wl));
 if strcmpi(method,'iam')
     [Fq,Atoms,C]=AIXRD2016_calcFq_iam(mldfile,Nq,wl,dim);
 elseif strcmpi(method,'ai')
-    [b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc,~,~,~,~,~] = mldread_g(mldfile,0);
-    [Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim,b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc);
+    [Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim);
 end
 Iq=abs(Fq).^2;     % Intensity is form-factor absolute squared ff*
 %================================================================================
