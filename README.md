@@ -25,7 +25,7 @@ setup2.txt format:
 
 title  Nq  wl  dim  method
 
-title1 Nq1 wl1 dim1 method1
+title1 Nq1 wl1 dim1 method1  
 title2 Nq2 wl2 dim2 method2
 
 % end of file 
