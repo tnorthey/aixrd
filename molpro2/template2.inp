@@ -4,17 +4,16 @@
 $bset=6-31g
 basis=$bset                                              
 
-r12=3 BOHR;
-
 geometry={
 
-He1
-He2 He1 r12
+C   0.0  0.0  0.0
+O   0.0  0.0  2.0
+O   0.0  0.0 -2.0
 }
 
 hf
 
-$title='../input/hehe.mld'
+$title='../input/template2.mld'
 put,molden,$title
 
 ---                         ! end of file

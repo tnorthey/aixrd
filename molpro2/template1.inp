@@ -1,0 +1,18 @@
+***,MOLPRO_SCF TEMPLATE     ! title
+                                                       
+! basis set,
+$bset=aug-cc-pvqz
+basis=$bset                                              
+
+geometry={
+
+B   0.0  0.0  0.0
+}
+
+hf
+
+$title='../input/template1.mld'
+put,molden,$title
+
+---                         ! end of file
+can write notes here :)

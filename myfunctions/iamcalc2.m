@@ -4,19 +4,14 @@ function[Iq]=iamcalc2(Atoms,q)
 % Uses Debye approx for orientational averaged diffraction pattern
 
 % IAM rotationally-averaged diffraction intensity.
-au2ang = 0.52917721092d0;
+% au2ang = 0.52917721092d0;
 
 Nq=length(q);        % length of q
 Nat=size(Atoms,1);   % number of atoms
 ZZ=Atoms(:,1);       % atomic number
-X=Atoms(:,2)*au2ang; % atomic positions converted to Angstroms
-Y=Atoms(:,3)*au2ang;
-Z=Atoms(:,4)*au2ang;
-% X=Atoms(:,2); 
-% Y=Atoms(:,3);
-% Z=Atoms(:,4);
-
-q=q/au2ang;    % q must be inverse angstrom for this.. 
+X=Atoms(:,2); 
+Y=Atoms(:,3);
+Z=Atoms(:,4);
 
 Iq=zeros(1,Nq);
 for j1=1:Nat

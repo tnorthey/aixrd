@@ -33,22 +33,21 @@
  $bset=6-31g
  basis=$bset
  
- r12=3 BOHR;
- 
  geometry={
- He1
- He2 He1 r12
+ C   0.0  0.0  0.0
+ O   0.0  0.0  2.0
+ O   0.0  0.0 -2.0
  }
  
  hf
  
- $title='../input/hehe.mld'
+ $title='../input/template2.mld'
  put,molden,$title
  
 
  Variables initialized (778), CPU time= 0.00 sec
  Commands  initialized (547), CPU time= 0.01 sec, 516 directives.
- Default parameters read. Elapsed time= 0.03 sec
+ Default parameters read. Elapsed time= 0.04 sec
 
  Checking input...
  Passed
@@ -63,7 +62,7 @@
 
  **********************************************************************************************************************************
  LABEL *   MOLPRO_SCF TEMPLATE                                                           
- Linux-3.2.0-92-generic/sce-chem-c01105(x86_64) 64 bit serial version                    DATE: 27-Oct-15          TIME: 14:49:13  
+ Linux-3.2.0-98-generic/sce-chem-c01105(x86_64) 64 bit serial version                    DATE: 18-Feb-16          TIME: 14:17:37  
  **********************************************************************************************************************************
 
  SHA1:             960ce83de8be0427555cf121dea4debc26c720b5
@@ -75,7 +74,9 @@
  Variable memory set to    8000000 words,  buffer space   230000 words
 
  SETTING BASIS          =    $BSET
- SETTING R12            =         3.00000000  BOHR                            
+
+Geometry recognized as XYZ
+
   --><jobstep command="HF-SCF" commandset="SCFPRO">
    <!--
 
@@ -89,24 +90,24 @@
 
  Using spherical harmonics
 
- Library entry HE     S 6-31G                selected for orbital group  1
+ Library entry C      S 6-31G                selected for orbital group  1
+ Library entry C      P 6-31G                selected for orbital group  1
+ Library entry O      S 6-31G                selected for orbital group  2
+ Library entry O      P 6-31G                selected for orbital group  2
 
 1PROGRAM * SEWARD (Integral evaluation for generally contracted gaussian basis sets)     Author: Roland Lindh, 1990
 
  Geometry written to block  1 of record 700
 
- Orientation using atomic masses  
- Molecule type: Linear
- Symmetry elements: X,Y,Z
- Rotational constants:     100.1982689    100.1982689      0.0000000 GHz  (calculated with average atomic masses)
 
  Point group  D2h 
 
 
    --><cml:symmetry pointGroup="D2h"/><!--
    --><cml:atomArray>
-    <cml:atom id="a1" elementType="He" x3="0.0" y3="0.0" z3="-0.7937658135"/>
-    <cml:atom id="a2" elementType="He" x3="0.0" y3="0.0" z3="0.7937658135"/>
+    <cml:atom id="a1" elementType="C" x3="0.0" y3="0.0" z3="0.0"/>
+    <cml:atom id="a2" elementType="O" x3="0.0" y3="0.0" z3="2.0"/>
+    <cml:atom id="a3" elementType="O" x3="0.0" y3="0.0" z3="-2.0"/>
    </cml:atomArray><!--
    --><cml:bondArray>
    </cml:bondArray><!--
@@ -115,24 +116,29 @@
 
  NR  ATOM    CHARGE       X              Y              Z
 
-   1  HE1     2.00    0.000000000    0.000000000   -1.500000000
-   2  HE2     2.00    0.000000000    0.000000000    1.500000000
+   1  C       6.00    0.000000000    0.000000000    0.000000000
+   2  O       8.00    0.000000000    0.000000000    3.779452263
+   3  O       8.00    0.000000000    0.000000000   -3.779452263
 
- NUCLEAR CHARGE:                    4
- NUMBER OF PRIMITIVE AOS:           8
- NUMBER OF SYMMETRY AOS:            8
- NUMBER OF CONTRACTIONS:            4   (   2Ag  +   0B3u +   0B2u +   0B1g +   2B1u +   0B2g +   0B3g +   0Au  )
- NUMBER OF CORE ORBITALS:           0   (   0Ag  +   0B3u +   0B2u +   0B1g +   0B1u +   0B2g +   0B3g +   0Au  )
- NUMBER OF VALENCE ORBITALS:        2   (   1Ag  +   0B3u +   0B2u +   0B1g +   1B1u +   0B2g +   0B3g +   0Au  )
+ NUCLEAR CHARGE:                   22
+ NUMBER OF PRIMITIVE AOS:          66
+ NUMBER OF SYMMETRY AOS:           66
+ NUMBER OF CONTRACTIONS:           27   (   8Ag  +   4B3u +   4B2u +   0B1g +   7B1u +   2B2g +   2B3g +   0Au  )
+ NUMBER OF CORE ORBITALS:           3   (   2Ag  +   0B3u +   0B2u +   0B1g +   1B1u +   0B2g +   0B3g +   0Au  )
+ NUMBER OF VALENCE ORBITALS:       12   (   3Ag  +   2B3u +   2B2u +   0B1g +   3B1u +   1B2g +   1B3g +   0Au  )
 
 
- NUCLEAR REPULSION ENERGY    1.33333333
+ NUCLEAR REPULSION ENERGY   33.86734138
 
 
  Eigenvalues of metric
 
-         1 0.416E+00 0.185E+01
-         5 0.289E+00 0.145E+01
+         1 0.109E+00 0.250E+00 0.436E+00 0.879E+00 0.927E+00 0.129E+01 0.179E+01 0.233E+01
+         2 0.351E+00 0.538E+00 0.134E+01 0.178E+01
+         3 0.351E+00 0.538E+00 0.134E+01 0.178E+01
+         5 0.653E-01 0.319E+00 0.459E+00 0.891E+00 0.106E+01 0.171E+01 0.249E+01
+         6 0.498E+00 0.150E+01
+         7 0.498E+00 0.150E+01
 
 
  Contracted 2-electron integrals neglected if value below      1.0D-11
@@ -141,36 +147,36 @@
      0.262 MB (compressed) written to integral file (100.0%)
 
 
- NUMBER OF SORTED TWO-ELECTRON INTEGRALS:         39.     BUFFER LENGTH:  32768
- NUMBER OF SEGMENTS:   1  SEGMENT LENGTH:         39      RECORD LENGTH: 524288
+ NUMBER OF SORTED TWO-ELECTRON INTEGRALS:      12777.     BUFFER LENGTH:  32768
+ NUMBER OF SEGMENTS:   1  SEGMENT LENGTH:      12777      RECORD LENGTH: 524288
 
- Memory used in sort:       0.56 MW
+ Memory used in sort:       0.57 MW
 
- SORT1 READ         128. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.00 SEC
- SORT2 READ          39. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.00 SEC
+ SORT1 READ       25452. AND WROTE       12589. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.00 SEC
+ SORT2 READ       12589. AND WROTE       12777. INTEGRALS IN      1 RECORDS. CPU TIME:     0.01 SEC, REAL TIME:     0.01 SEC
 
- FILE SIZES:   FILE 1:     7.8 MBYTE,  FILE 4:     4.2 MBYTE,   TOTAL:     12.0 MBYTE
+ FILE SIZES:   FILE 1:     7.8 MBYTE,  FILE 4:     4.2 MBYTE,   TOTAL:     12.1 MBYTE
 
  OPERATOR DM      FOR CENTER  0  COORDINATES:    0.000000    0.000000    0.000000
 
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      19        7.50       500      610      700      900      950      970     1000      129      960     1100   
+              1      19        7.64       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1300     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         0.09      0.02
- REAL TIME  *         0.11 SEC
- DISK USED  *        12.25 MB      
+ CPU TIMES  *         0.12      0.05
+ REAL TIME  *         0.14 SEC
+ DISK USED  *        12.36 MB      
  **********************************************************************************************************************************
 
 1PROGRAM * RHF-SCF (CLOSED SHELL)       Authors: W. Meyer, H.-J. Werner
 
 
- NUMBER OF ELECTRONS:       2+    2-
+ NUMBER OF ELECTRONS:      11+   11-
  CONVERGENCE THRESHOLDS:    1.00E-05 (Density)    1.00E-07 (Energy)
  MAX. NUMBER OF ITERATIONS:       60
  INTERPOLATION TYPE:            DIIS
@@ -179,31 +185,38 @@
 
 
 
- Orbital guess generated from atomic densities. Full valence occupancy:    1   0   0   0   1   0   0   0
+ Orbital guess generated from atomic densities. Full valence occupancy:    5   2   2   0   4   1   1   0
 
 
  Molecular orbital dump at record        2100.2
 
- Initial alpha occupancy:   1   0   0   0   1
- Initial beta  occupancy:   1   0   0   0   1
+ Initial alpha occupancy:   4   1   1   0   3   1   1
+ Initial beta  occupancy:   4   1   1   0   3   1   1
  Wave function symmetry:    1
 
  ITERATION    DDIFF          GRAD             ENERGY        2-EL.EN.            DIPOLE MOMENTS         DIIS   ORB.
-    1      0.000D+00      0.000D+00        -5.69699075      6.758750    0.00000    0.00000    0.00000    0    start
-    2      0.000D+00      0.136D-02        -5.69699432      6.759000    0.00000    0.00000    0.00000    1    diag
-    3      0.123D-02      0.176D-03        -5.69699438      6.759033    0.00000    0.00000    0.00000    2    diag
-    4      0.183D-03      0.142D-06        -5.69699438      6.759032    0.00000    0.00000    0.00000    3    diag
-    5      0.150D-06      0.310D-09        -5.69699438      6.759032    0.00000    0.00000    0.00000    0    orth
+    1      0.000D+00      0.000D+00      -186.26760480    209.225827    0.00000    0.00000    0.00000    0    start
+    2      0.000D+00      0.109D+00      -182.90286451    205.155220    0.00000    0.00000    0.00000    1    diag
+    3      0.278D+00      0.294D+00      -186.93950797    204.889470    0.00000    0.00000    0.00000    2    diag
+    4      0.222D+00      0.179D-01      -186.98868479    206.283785    0.00000    0.00000    0.00000    3    diag
+    5      0.312D-01      0.100D-01      -187.00865765    206.376752    0.00000    0.00000    0.00000    4    diag
+    6      0.206D-01      0.543D-02      -187.01678085    206.608328    0.00000    0.00000    0.00000    5    diag
+    7      0.227D-01      0.957D-03      -187.01684452    206.616318    0.00000    0.00000    0.00000    6    diag
+    8      0.120D-02      0.274D-03      -187.01684815    206.634733    0.00000    0.00000    0.00000    7    diag
+    9      0.541D-03      0.870D-04      -187.01684891    206.632981    0.00000    0.00000    0.00000    8    diag
+   10      0.216D-03      0.819D-05      -187.01684892    206.633210    0.00000    0.00000    0.00000    9    orth
+   11      0.228D-04      0.840D-06      -187.01684892    206.633232    0.00000    0.00000    0.00000    9    diag
+   12      0.140D-05      0.225D-06      -187.01684892    206.633220    0.00000    0.00000    0.00000    0    orth
 
- Final occupancy:   1   0   0   0   1
+ Final occupancy:   4   1   1   0   3   1   1
 
- !RHF STATE 1.1 Energy                 -5.696994380718
+ !RHF STATE 1.1 Energy               -187.016848921546
    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
-     value="-5.69699438071839"/><!--
- Nuclear energy                         1.33333333
- One-electron energy                  -10.40984390
- Two-electron energy                    3.37951619
- Virial quotient                       -0.98512880
+     value="-187.016848921546"/><!--
+ Nuclear energy                        33.86734138
+ One-electron energy                 -324.20080047
+ Two-electron energy                  103.31661018
+ Virial quotient                       -1.00443857
  !RHF STATE 1.1 Dipole moment           0.00000000     0.00000000     0.00000000
  Dipole moment /Debye                   0.00000000     0.00000000     0.00000000
    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
@@ -211,58 +224,79 @@
 
  Orbital energies:
 
-         1.1          2.1
-     -0.970213     1.363450
+         1.1          2.1          3.1          4.1          5.1          6.1
+    -20.665386   -11.550196    -1.235109    -0.833653     0.022745     0.753986
 
-         1.5          2.5
-     -0.855193     1.536930
+         1.2          2.2          3.2
+     -0.533769    -0.035389     0.692168
 
- HOMO      1.5    -0.855193 =     -23.2710eV
- LUMO      2.1     1.363450 =      37.1013eV
- LUMO-HOMO         2.218642 =      60.3723eV
+         1.3          2.3          3.3
+     -0.533769    -0.035389     0.692168
+
+         1.5          2.5          3.5          4.5          5.5
+    -20.665408    -1.230920    -0.487788     0.159036     0.822623
+
+         1.6          2.6
+     -0.523896     1.133171
+
+         1.7          2.7
+     -0.523896     1.133171
+
+ HOMO      3.5    -0.487788 =     -13.2734eV
+ LUMO      2.2    -0.035389 =      -0.9630eV
+ LUMO-HOMO         0.452399 =      12.3104eV
 
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      19        7.50       500      610      700      900      950      970     1000      129      960     1100   
+              1      19        7.64       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1300     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
-              2       4        0.29       700     1000      520     2100   
+              2       4        0.33       700     1000      520     2100   
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL        HF       INT
- CPU TIMES  *         0.10      0.01      0.02
- REAL TIME  *         0.12 SEC
- DISK USED  *        12.25 MB      
+ CPU TIMES  *         0.13      0.01      0.05
+ REAL TIME  *         0.16 SEC
+ DISK USED  *        12.36 MB      
  **********************************************************************************************************************************
    -->
-   <time start="14:49:13" end="14:49:13" cpu="0.1" system="0.02" real="0.12"/>
-   <storage units="megabyte" memory="65.84" sf="0.0" df="12.25" eaf="0.0"/>
+   <time start="14:17:37" end="14:17:37" cpu="0.13" system="0.03" real="0.16"/>
+   <storage units="megabyte" memory="65.84" sf="0.0" df="12.36" eaf="0.0"/>
   </jobstep><!--
- SETTING TITLE          =    ../input/hehe.mld
+ SETTING TITLE          =    ../input/template2.mld
 
- Dump information in style MOLDEN to ../input/hehe.mld                                                               
+ Dump information in style MOLDEN to ../input/template2.mld                                                          
 
  Molecular orbitals read from record     2100.2  Type=RHF/CANONICAL (state 1.1)
  Occupation numbers read from record     2100.2  Type=RHF/RHF (state 1.1)
  Orbital energies read from record       2100.2  Type=RHF/CANONICAL (state 1.1)
  Redundancy group numbers read from rec  2100.2  Type=RHF/RHF (state 1.1)
  
- DUMP ORBITAL  1.1 AS ORBITAL    1  occ=    2.0000  eig=   -0.9702  GROUP=   2
- DUMP ORBITAL  1.5 AS ORBITAL    2  occ=    2.0000  eig=   -0.8552  GROUP=   2
+ DUMP ORBITAL  1.5 AS ORBITAL    1  occ=    2.0000  eig=  -20.6654  GROUP=   2
+ DUMP ORBITAL  1.1 AS ORBITAL    2  occ=    2.0000  eig=  -20.6654  GROUP=   2
+ DUMP ORBITAL  2.1 AS ORBITAL    3  occ=    2.0000  eig=  -11.5502  GROUP=   2
+ DUMP ORBITAL  3.1 AS ORBITAL    4  occ=    2.0000  eig=   -1.2351  GROUP=   2
+ DUMP ORBITAL  2.5 AS ORBITAL    5  occ=    2.0000  eig=   -1.2309  GROUP=   2
+ DUMP ORBITAL  4.1 AS ORBITAL    6  occ=    2.0000  eig=   -0.8337  GROUP=   2
+ DUMP ORBITAL  1.3 AS ORBITAL    7  occ=    2.0000  eig=   -0.5338  GROUP=   2
+ DUMP ORBITAL  1.2 AS ORBITAL    8  occ=    2.0000  eig=   -0.5338  GROUP=   2
+ DUMP ORBITAL  1.6 AS ORBITAL    9  occ=    2.0000  eig=   -0.5239  GROUP=   2
+ DUMP ORBITAL  1.7 AS ORBITAL   10  occ=    2.0000  eig=   -0.5239  GROUP=   2
+ DUMP ORBITAL  3.5 AS ORBITAL   11  occ=    2.0000  eig=   -0.4878  GROUP=   2
 
- Total charge:       4.000000
+ Total charge:      22.000000
 
  **********************************************************************************************************************************
 
         HF-SCF  
-     -5.69699438
+   -187.01684892
  **********************************************************************************************************************************
  Variable memory released
   --><stm:metadataList>
-   <stm:metadata name="dc:date" content="2015-10-27T14:49:13-00:00"/>
+   <stm:metadata name="dc:date" content="2016-02-18T14:17:37-00:00"/>
    <stm:metadata name="dc:creator" content="s1267651"/>
    <stm:metadata name="dc:title" content="MOLPRO_SCF TEMPLATE"/>
    <stm:metadata name="cmlm:insilico" content="Molpro"/>
@@ -271,22 +305,22 @@
    <version major="2012" minor="1" SHA="960ce83de8be0427555cf121dea4debc26c720b5"
      integer_bits="64" parallelism="serial">
     2012.1
-    <date year="2015" month="10" day="27" hour="14" minute="49" second="13">
-     2015-10-27T14:49:13
+    <date year="2016" month="2" day="18" hour="14" minute="17" second="37">
+     2016-02-18T14:17:37
     </date>
    </version>
    <licence id="edinburgh"/>
    <parallel processes="1" nodes="1" all_processes="1" openmp="1"/>
    <machine hostname="sce-chem-c01105" architecture="x86_64">
-    Linux-3.2.0-92-generic/sce-chem-c01105(x86_64) 64 bit serial version
+    Linux-3.2.0-98-generic/sce-chem-c01105(x86_64) 64 bit serial version
     <sysinfo name="cpu MHz" content="3101.000"/>
-    <sysinfo name="MemTotal" content="16321068 kB"/>
+    <sysinfo name="MemTotal" content="16321064 kB"/>
     <sysinfo name="vendor_id" content="GenuineIntel"/>
     <sysinfo name="cpu family" content="6"/>
     <sysinfo name="model name" content="Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz"/>
     <sysinfo name="flags"
       content="fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx lahf_lm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid"/>
-    <sysinfo name="MemTotal" content="16321068 kB"/>
+    <sysinfo name="MemTotal" content="16321064 kB"/>
     <sysinfo name="cache size" content="6144 KB"/>
     <sysinfo name="ncpu" content="4"/>
    </machine>
@@ -297,13 +331,13 @@
    <p>                                                                                 ! basis set, </p>
    <p> $bset=6-31g </p>
    <p> basis=$bset </p>
-   <p> r12=3 BOHR; </p>
    <p> geometry={ </p>
-   <p> He1 </p>
-   <p> He2 He1 r12 </p>
+   <p> C   0.0  0.0  0.0 </p>
+   <p> O   0.0  0.0  2.0 </p>
+   <p> O   0.0  0.0 -2.0 </p>
    <p> } </p>
    <p> hf </p>
-   <p> $title='../input/hehe.mld' </p>
+   <p> $title='../input/template2.mld' </p>
    <p> put,molden,$title </p>
   </input>
   <!--

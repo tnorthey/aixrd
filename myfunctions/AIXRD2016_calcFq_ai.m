@@ -55,15 +55,7 @@ for i=1:Ng     % diagonal terms i=j
                 A = Qi{j}*gu(i)+ri(i,j);
                 Ri=ri(i,j);
                 ply = A.^2+.5*gu(i)-2*Ri*A+Ri^2;               
-            elseif Li(j)==2    
-                A = Qi{j}*gu(i)+ri(i,j);
-                Ri=ri(i,j);
-                ply = A.^4-4*Ri*A.^3+...
-                (3*gu(i)+2*Ri^2+8*Ri)*A.^2-...
-                (2*Ri^3+2*Ri^3+6*Ri*gu(i))*A+...
-                0.5*(Ri^2+Ri^2+4*Ri^2)*gu(i)+...
-                0.75*gu(i)^2+Ri^4;               
-            elseif Li(j)>0    
+            elseif Li(j)>1    
                 ply=zeros(size(Fq));
                 Ri=ri(i,j);
                 for mm=0:2*Li(j)
