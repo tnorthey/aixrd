@@ -1,0 +1,21 @@
+***,H2    ! title
+                                                        
+! basis set,
+$bset=6-31G
+basis=$bset                                              
+
+geometry={
+! geometry here,
+H 0.0 0.0 -1.0
+H 0.0 0.0 1.0
+}
+
+hf
+optg 
+freq
+
+$title='../input/h2_$bset_freq.mld'
+put,molden,$title
+
+---                         ! end of file
+can write notes here :)

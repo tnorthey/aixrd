@@ -1,0 +1,904 @@
+<?xml version="1.0"?>
+<molpro xmlns="http://www.molpro.net/schema/molpro-output"
+  xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+  xmlns:cml="http://www.xml-cml.org/schema"
+  xmlns:stm="http://www.xml-cml.org/schema"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+ <!--
+
+ Primary working directories    : /tmp/s1267651
+ Secondary working directories  : /tmp/s1267651
+ Wavefunction directory         : /home/s1267651/wfu/
+ Main file repository           : /tmp/s1267651/
+
+ SHA1      : 960ce83de8be0427555cf121dea4debc26c720b5
+ NAME      : 2012.1.960ce83
+ ARCHNAME  : Linux/x86_64
+ FC        : /opt/intel/composer_xe_2013_sp1.2.144/bin/intel64/ifort
+ FCVERSION : 14.0.2
+ BLASLIB   : -Wl,-_start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_sequential.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,-_end-group
+ id        : edinburgh
+
+ Nodes          nprocs
+ sce-chem-c01105    1
+
+ Using customized tuning parameters: mindgm=7; mindgv=24; mindgc=1; mindgr=1; noblas=0; minvec=7
+ default implementation of scratch files=df  
+
+ --><job>
+  <!--
+ ***,H2
+ 
+                                                                                 ! basis set,
+ $bset=6-31G
+ basis=$bset
+ 
+ geometry={
+                                                                                 ! geometry here,
+ H 0.0 0.0 -1.0
+ H 0.0 0.0 1.0
+ }
+ 
+ hf
+ optg
+ freq
+ 
+ $title='../input/h2_$bset_freq.mld'
+ put,molden,$title
+ 
+
+ Variables initialized (778), CPU time= 0.00 sec
+ Commands  initialized (547), CPU time= 0.01 sec, 516 directives.
+ Default parameters read. Elapsed time= 0.04 sec
+
+ Checking input...
+ Passed
+1
+
+
+                                         ***  PROGRAM SYSTEM MOLPRO  ***
+                         Copyright, University College Cardiff Consultants Limited, 2008
+
+                                    Version 2012.1 linked Apr  1 2014 15:33:03
+
+
+ **********************************************************************************************************************************
+ LABEL *   H2                                                                            
+ Linux-3.2.0-98-generic/sce-chem-c01105(x86_64) 64 bit serial version                    DATE: 18-Feb-16          TIME: 17:42:13  
+ **********************************************************************************************************************************
+
+ SHA1:             960ce83de8be0427555cf121dea4debc26c720b5
+ **********************************************************************************************************************************
+  -->
+  <!--
+ SETTING BSET           =    6-31G
+
+ Variable memory set to    8000000 words,  buffer space   230000 words
+
+ SETTING BASIS          =    $BSET
+
+Geometry recognized as XYZ
+
+  --><jobstep command="HF-SCF" commandset="SCFPRO">
+   <!--
+
+
+ Current variables in basis input:
+
+ Set= 1  $BSET               =  6-31G
+
+ Recomputing integrals since basis changed
+
+
+ Using spherical harmonics
+
+ Library entry H      S 6-31G                selected for orbital group  1
+
+1PROGRAM * SEWARD (Integral evaluation for generally contracted gaussian basis sets)     Author: Roland Lindh, 1990
+
+ Geometry written to block  1 of record 700
+
+
+ Point group  D2h 
+
+
+   --><cml:symmetry pointGroup="D2h"/><!--
+   --><cml:atomArray>
+    <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-1.0"/>
+    <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="1.0"/>
+   </cml:atomArray><!--
+   --><cml:bondArray>
+   </cml:bondArray><!--
+
+ ATOMIC COORDINATES
+
+ NR  ATOM    CHARGE       X              Y              Z
+
+   1  H       1.00    0.000000000    0.000000000   -1.889726131
+   2  H       1.00    0.000000000    0.000000000    1.889726131
+
+ NUCLEAR CHARGE:                    2
+ NUMBER OF PRIMITIVE AOS:           8
+ NUMBER OF SYMMETRY AOS:            8
+ NUMBER OF CONTRACTIONS:            4   (   2Ag  +   0B3u +   0B2u +   0B1g +   2B1u +   0B2g +   0B3g +   0Au  )
+ NUMBER OF CORE ORBITALS:           0   (   0Ag  +   0B3u +   0B2u +   0B1g +   0B1u +   0B2g +   0B3g +   0Au  )
+ NUMBER OF VALENCE ORBITALS:        2   (   1Ag  +   0B3u +   0B2u +   0B1g +   1B1u +   0B2g +   0B3g +   0Au  )
+
+
+ NUCLEAR REPULSION ENERGY    0.26458860
+
+
+ Eigenvalues of metric
+
+         1 0.387E+00 0.194E+01
+         5 0.260E+00 0.142E+01
+
+
+ Contracted 2-electron integrals neglected if value below      1.0D-11
+ AO integral compression algorithm  1   Integral accuracy      1.0D-11
+
+     0.262 MB (compressed) written to integral file (100.0%)
+
+
+ NUMBER OF SORTED TWO-ELECTRON INTEGRALS:         39.     BUFFER LENGTH:  32768
+ NUMBER OF SEGMENTS:   1  SEGMENT LENGTH:         39      RECORD LENGTH: 524288
+
+ Memory used in sort:       0.56 MW
+
+ SORT1 READ         128. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.00 SEC
+ SORT2 READ          39. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.00 SEC
+
+ FILE SIZES:   FILE 1:     7.8 MBYTE,  FILE 4:     4.2 MBYTE,   TOTAL:     12.0 MBYTE
+
+ OPERATOR DM      FOR CENTER  0  COORDINATES:    0.000000    0.000000    0.000000
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      19        7.51       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1300     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
+
+ PROGRAMS   *        TOTAL       INT
+ CPU TIMES  *         0.08      0.01
+ REAL TIME  *         0.12 SEC
+ DISK USED  *        12.27 MB      
+ **********************************************************************************************************************************
+
+1PROGRAM * RHF-SCF (CLOSED SHELL)       Authors: W. Meyer, H.-J. Werner
+
+
+ NUMBER OF ELECTRONS:       1+    1-
+ CONVERGENCE THRESHOLDS:    1.00E-06 (Density)    1.00E-07 (Energy)
+ MAX. NUMBER OF ITERATIONS:       60
+ INTERPOLATION TYPE:            DIIS
+ INTERPOLATION STEPS:              2 (START)      1 (STEP)
+ LEVEL SHIFTS:                  0.00 (CLOSED)  0.00 (OPEN) 
+
+
+
+ Orbital guess generated from atomic densities. Full valence occupancy:    1   0   0   0   1   0   0   0
+
+
+ Molecular orbital dump at record        2100.2
+
+ Initial alpha occupancy:   1   0   0   0   0
+ Initial beta  occupancy:   1   0   0   0   0
+ Wave function symmetry:    1
+
+ ITERATION    DDIFF          GRAD             ENERGY        2-EL.EN.            DIPOLE MOMENTS         DIIS   ORB.
+    1      0.000D+00      0.000D+00        -0.91624654      0.847558    0.00000    0.00000    0.00000    0    start
+    2      0.000D+00      0.379D-02        -0.91627064      0.845920    0.00000    0.00000    0.00000    1    diag
+    3      0.358D-02      0.602D-03        -0.91627126      0.845613    0.00000    0.00000    0.00000    2    diag
+    4      0.676D-03      0.952D-07        -0.91627126      0.845613    0.00000    0.00000    0.00000    3    diag
+    5      0.633D-07      0.389D-07        -0.91627126      0.845612    0.00000    0.00000    0.00000    0    orth
+
+ Final occupancy:   1   0   0   0   0
+
+ !RHF STATE 1.1 Energy                 -0.916271258898
+   --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+     value="-0.916271258897724"/><!--
+ Nuclear energy                         0.26458860
+ One-electron energy                   -1.60366611
+ Two-electron energy                    0.42280625
+ Virial quotient                       -1.29000458
+ !RHF STATE 1.1 Dipole moment           0.00000000     0.00000000     0.00000000
+ Dipole moment /Debye                   0.00000000     0.00000000     0.00000000
+   --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+     stateNumber="1" value="0.0 0.0 0.0"/><!--
+
+ Orbital energies:
+
+         1.1          2.1
+     -0.379027     1.005221
+
+         1.5          2.5
+     -0.023578     1.029019
+
+ HOMO      1.1    -0.379027 =     -10.3138eV
+ LUMO      1.5    -0.023578 =      -0.6416eV
+ LUMO-HOMO         0.355449 =       9.6723eV
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      19        7.51       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1300     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
+
+              2       4        0.30       700     1000      520     2100   
+                                         GEOM     BASIS   MCVARS     RHF  
+
+ PROGRAMS   *        TOTAL        HF       INT
+ CPU TIMES  *         0.09      0.01      0.01
+ REAL TIME  *         0.13 SEC
+ DISK USED  *        12.27 MB      
+ **********************************************************************************************************************************
+   -->
+   <time start="17:42:13" end="17:42:13" cpu="0.09" system="0.04" real="0.13"/>
+   <storage units="megabyte" memory="65.84" sf="0.0" df="12.27" eaf="0.0"/>
+  </jobstep><!--
+  --><jobstep command="OPTG" commandset="OPT">
+   <!--
+
+
+ PROGRAM * OPT (Geometry optimization)     Authors: F. Eckert and H.-J. Werner
+
+
+ BFGS update of hessian
+
+ *** Long output written to logfile /home/s1267651/phd_mini_19Jan2016/chapter2projects/vibavg/molpro2/h2_6-31g_freq.log ***
+
+
+ Geometry optimization using default procedure for command HF-SCF
+
+ Geometry written to block  1 of record 700
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.279718417998402">
+      0.000000000000   0.000000000000  -0.074010305871
+      0.000000000000   0.000000000000   0.074010305871
+   </gradient><!--
+
+ Making model hessian for cartesian coordinates
+
+ Quadratic Steepest Descent - Minimum Search
+   --><opt energy="-0.91627126" type="HF-SCF000" line="0.0" convergence="0.45000050466972"
+     gradient="0.104666378318354"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.831616654340294"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.831616654340294"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-0.968515495397593"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.01" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+
+ ITER.   ENERGY(OLD)    ENERGY(NEW)      DE          GRADMAX     GRADNORM    GRADRMS     STEPMAX     STEPLEN     STEPRMS   CPU-time
+   1    -0.91627126    -0.96851550    -0.05224424  0.10466638  0.10466638  0.10466638  0.45000050  0.45000050  0.31819841      0.03
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.283459006925963">
+      0.000000000000   0.000000000000  -0.090185811797
+      0.000000000000   0.000000000000   0.090185811797
+   </gradient><!--
+   --><opt energy="-0.9685155" type="HF-SCF000" line="0.0" convergence="0.449999492546285"
+     gradient="0.127541998176795"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.663233687401785"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.663233687401785"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.03061026903404"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.02" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   2    -0.96851550    -1.03061027    -0.06209477  0.12754200  0.12754200  0.12754200  0.44999949  0.44999949  0.31819769      0.06
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.260524249017758">
+      0.000000000000   0.000000000000  -0.103932820053
+      0.000000000000   0.000000000000   0.103932820053
+   </gradient><!--
+   --><opt energy="-1.03061027" type="HF-SCF000" line="0.0"
+     convergence="0.600000378421602" gradient="0.146983203695065"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.438722670042214"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.438722670042214"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.11494904382595"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.01" real="0.05"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   3    -1.03061027    -1.11494904    -0.08433877  0.14698320  0.14698320  0.14698320  0.60000038  0.60000038  0.42426434      0.09
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.121769038868127">
+      0.000000000000   0.000000000000  -0.073437509081
+      0.000000000000   0.000000000000   0.073437509081
+   </gradient><!--
+   --><opt energy="-1.11494904" type="HF-SCF000" line="0.0" convergence="0.59999980438297"
+     gradient="0.103856321329758"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.214211867479169"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.214211867479169"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-0.979585655486019"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.02" system="0.03" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   4    -1.11494904    -0.97958566     0.13536339  0.10385632  0.10385632  0.10385632  0.59999980  0.59999980  0.42426393      0.11
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="-0.623200936855923">
+      0.000000000000   0.000000000000   0.769760649334
+      0.000000000000   0.000000000000  -0.769760649334
+   </gradient><!--
+   --><opt energy="-0.97958566" type="HF-SCF000" line="0.0"
+     convergence="0.547743415249009" gradient="1.08860595006918"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.419169123894682"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.419169123894682"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.11991539208789"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.02" system="0.02" real="0.05"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   5    -0.97958566    -1.11991539    -0.14032974  1.08860595  1.08860595  1.08860595  0.54774342  0.54774342  0.38731308      0.13
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.956585488955511E-01">
+      0.000000000000   0.000000000000  -0.060381742161
+      0.000000000000   0.000000000000   0.060381742161
+   </gradient><!--
+   --><opt energy="-1.11991539" type="HF-SCF000" line="0.0"
+     convergence="0.398409983741219E-01" gradient="0.853926786834908E-01"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.404261228167807"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.404261228167807"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.12297534674773"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.04" system="0.0" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   6    -1.11991539    -1.12297535    -0.00305995  0.08539268  0.08539268  0.08539268  0.03984100  0.03984100  0.02817184      0.17
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.730588475264444E-01">
+      0.000000000000   0.000000000000  -0.047816948959
+      0.000000000000   0.000000000000   0.047816948959
+   </gradient><!--
+   --><opt energy="-1.12297535" type="HF-SCF000" line="0.0"
+     convergence="0.151620082808837" gradient="0.676233777291112E-01"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.347527298877457"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.347527298877457"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.12586067005146"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.02" system="0.02" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   7    -1.12297535    -1.12586067    -0.00288532  0.06762338  0.06762338  0.06762338  0.15162008  0.15162008  0.10721159      0.19
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="-0.400267916012753E-01">
+      0.000000000000   0.000000000000   0.030474247539
+      0.000000000000   0.000000000000  -0.030474247539
+   </gradient><!--
+   --><opt energy="-1.12586067" type="HF-SCF000" line="0.0"
+     convergence="0.590169539109864E-01" gradient="0.430970941721262E-01"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.369610545556192"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.369610545556192"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.12676602478904"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.02" real="0.05"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   8    -1.12586067    -1.12676602    -0.00090535  0.04309709  0.04309709  0.04309709  0.05901695  0.05901695  0.04173129      0.22
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.976757507658567E-02">
+      0.000000000000   0.000000000000  -0.006992195136
+      0.000000000000   0.000000000000   0.006992195136
+   </gradient><!--
+   --><opt energy="-1.12676602" type="HF-SCF000" line="0.0"
+     convergence="0.110140709558116E-01" gradient="0.988845719213046E-02"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.365489247696239"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.365489247696239"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.12682706429745"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.02" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+   9    -1.12676602    -1.12682706    -0.00006104  0.00988846  0.00988846  0.00988846  0.01101407  0.01101407  0.00778812      0.25
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.109113891117732E-02">
+      0.000000000000   0.000000000000  -0.000789908113
+      0.000000000000   0.000000000000   0.000789908113
+   </gradient><!--
+   --><opt energy="-1.12682706" type="HF-SCF000" line="0.0"
+     convergence="0.140272515088524E-02" gradient="0.111709876587027E-02"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.364964369276113"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.364964369276113"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.12682782479553"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.01" real="0.05"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+  10    -1.12682706    -1.12682782    -0.00000076  0.00111710  0.00111710  0.00111710  0.00140273  0.00140273  0.00099188      0.28
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="-0.332538204650614E-04">
+      0.000000000000   0.000000000000   0.000024108057
+      0.000000000000   0.000000000000  -0.000024108057
+   </gradient><!--
+   --><opt energy="-1.12682782" type="HF-SCF000" line="0.0"
+     convergence="0.415433742648741E-04" gradient="0.34093941689813E-04"/><!--
+   --><jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="D2h"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.36497991417501"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.36497991417501"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.1268278255009"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.01" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/>
+   </jobstep><!--
+  11    -1.12682782    -1.12682783    -0.00000000  0.00003409  0.00003409  0.00003409  0.00004154  0.00004154  0.00002938      0.31
+
+ END OF GEOMETRY OPTIMIZATION.
+
+ Current geometry (xyz format, in Angstrom)
+
+    2
+ HF-SCF000/$BSET  ENERGY=-1.12682783
+ H          0.0000000000        0.0000000000       -0.3649799142
+ H          0.0000000000        0.0000000000        0.3649799142
+
+ **********************************************************************************************************************************
+
+ Geometry written to block  1 of record 700
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      19        7.51       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1300     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
+
+              2       4        0.30       700     1000      520     2100   
+                                         GEOM     BASIS   MCVARS     RHF  
+
+ PROGRAMS   *        TOTAL      OPTG        HF       INT
+ CPU TIMES  *         0.40      0.31      0.01      0.01
+ REAL TIME  *         0.61 SEC
+ DISK USED  *        12.34 MB      
+ **********************************************************************************************************************************
+   --><time start="17:42:13" end="17:42:13" cpu="0.31" system="0.17" real="0.48"/><!--
+   --><storage units="megabyte" memory="65.84" sf="0.0" df="12.34" eaf="0.0"/><!--
+  --></jobstep><!--
+  --><jobstep command="FREQ" commandset="FREQ">
+   <!--
+
+
+ PROGRAM * HESSIAN
+
+ Computing numerical hessian using default procedure for command HF-SCF
+
+ Symmetry elements for unique displacements: X  Y  Z  
+
+ Using no symmetry in wavefunction calculations
+
+ Running default procedure: HF-SCF000
+ 
+
+ Numerically approximating hessian using central gradient differences
+
+ Task list generated. Total number of displacements:      4
+
+   --><jobstep displaced="true" command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="C1"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.529177209E-02" y3="0.0" z3="-0.36497991417501"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.36497991417501"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.1268278252276"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="-0.199146255042137E-14 0.0 0.544009282066327E-14"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.02" system="0.01" real="0.1"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.76" eaf="0.0"/>
+   </jobstep><!--
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.206918662689517E-04">
+      0.000000108738   0.000000000000  -0.000014999577
+     -0.000000108738   0.000000000000   0.000014999577
+   </gradient><!--
+   --><jobstep displaced="true" command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="C1"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.529177209E-02" z3="-0.36497991417501"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.36497991417501"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.1268278252276"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 -0.199146255042137E-14 0.544009282066327E-14"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.02" system="0.02" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.76" eaf="0.0"/>
+   </jobstep><!--
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.206918662689517E-04">
+      0.000000000000   0.000000108738  -0.000014999577
+      0.000000000000  -0.000000108738   0.000014999577
+   </gradient><!--
+   --><jobstep displaced="true" command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="C1"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.35968814208501"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.36497991417501"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.12680700562128"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 -0.283106871279415E-13"/><!--
+    -->
+    <time start="17:42:13" end="17:42:13" cpu="0.03" system="0.02" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.76" eaf="0.0"/>
+   </jobstep><!--
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="-0.573518820939571E-02">
+      0.000000000000   0.000000000000   0.004188029076
+      0.000000000000   0.000000000000  -0.004188029076
+   </gradient><!--
+   --><jobstep displaced="true" command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><cml:symmetry pointGroup="C1"/><!--
+    --><cml:atomArray>
+     <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.37027168626501"/>
+     <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.36497991417501"/>
+    </cml:atomArray><!--
+    --><cml:bondArray>
+     <cml:bond atomRefs2="a1 a2"/>
+    </cml:bondArray><!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.12680747546075"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.453803661315533E-13"/><!--
+    -->
+    <time start="17:42:14" end="17:42:14" cpu="0.04" system="0.0" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.76" eaf="0.0"/>
+   </jobstep><!--
+   --><gradient name="SCF GRADIENT" stateSymmetry="1" stateNumber="1"
+     virial="0.562265566798418E-02">
+      0.000000000000   0.000000000000  -0.004046752475
+      0.000000000000   0.000000000000   0.004046752475
+   </gradient><!--
+
+ Numerical HF-SCF000 hessian completed. CPU-time:     0.17 sec, Elapsed:     0.18 sec
+
+ HF-SCF hessian saved to record  5300.2
+
+ FREQUENCIES * CALCULATION OF HARMONIC VIBRATIONAL SPECTRA FOR HF-SCF
+
+
+ Permanent Dipole Moment [debye]
+   1-  3    0.000000    0.000000    0.000000
+
+ Dipole Moment Norm    0.0000000 [debye]
+
+ Dipole Moment Derivatives [debye/ang]
+                   1             2             3             4             5             6
+         1    -0.0000000     0.0000000     0.0000000    -0.0000000     0.0000000     0.0000000
+         2     0.0000000    -0.0000000     0.0000000     0.0000000    -0.0000000     0.0000000
+         3     0.0000000     0.0000000    -0.0000000     0.0000000     0.0000000    -0.0000000
+
+ Projecting out rotations and translations
+
+   Low Vibration      Wavenumber
+        Nr             [1/cm] 
+        1                0.00
+        2                0.00
+        3                0.00
+        4                0.00
+        5                0.00
+
+     Vibration        Wavenumber
+        Nr             [1/cm] 
+        1             4646.33
+
+ FREQUENCIES * CALCULATION OF NORMAL MODES FOR HF-SCF
+
+
+ Atomic Coordinates
+
+  Nr  Atom  Charge       X              Y              Z
+
+   1   H     1.00    0.000000000    0.000000000   -0.689712081
+   2   H     1.00    0.000000000    0.000000000    0.689712081
+
+ Frequencies dumped to record   5400.2
+
+ Gradient norm at reference geometry: 0.34094D-04
+
+ Normal Modes
+
+                              1 Ag 
+ Wavenumbers [cm-1]         4646.33
+ Intensities [km/mol]          0.00
+ Intensities [relative]        0.00
+           GX1              0.00000
+           GY1              0.00000
+           GZ1              0.70432
+           GX2              0.00000
+           GY2              0.00000
+           GZ2             -0.70432
+
+
+ Normal Modes of low/zero frequencies
+
+                                  1           2           3           4           5
+ Wavenumbers [cm-1]            0.00        0.00        0.00        0.00        0.00
+ Intensities [km/mol]          0.00        0.00        0.00        0.00        0.00
+ Intensities [relative]        0.00        0.00        0.00        0.00        0.00
+           GX1              0.00000     0.70432     0.00000     0.00000     0.70432
+           GY1              0.84729     0.00000     0.00000    -0.52366     0.00000
+           GZ1              0.00000     0.00000     0.70432     0.00000     0.00000
+           GX2              0.00000     0.70432     0.00000     0.00000    -0.70432
+           GY2              0.52366     0.00000     0.00000     0.84729     0.00000
+           GZ2              0.00000     0.00000     0.70432     0.00000     0.00000
+
+
+ Zero point energy:  0.01058511 [H]     2323.16 [1/CM]       27.79 [KJ/MOL]
+   --><cml:symmetry pointGroup="C1"/><!--
+   --><cml:atomArray>
+    <cml:atom id="a1" elementType="H" x3="0.0" y3="0.0" z3="-0.36497991417501"/>
+    <cml:atom id="a2" elementType="H" x3="0.0" y3="0.0" z3="0.36497991417501"/>
+   </cml:atomArray><!--
+   --><cml:bondArray>
+    <cml:bond atomRefs2="a1 a2"/>
+   </cml:bondArray><!--
+ Frequency information read from record  5400.2
+   -->
+   <vibrations>
+    <normalCoordinate wavenumber="4646.33" units="inverseCentimetre">
+      0.00000000  0.00000000  0.70431617
+      0.00000000  0.00000000 -0.70431617
+    </normalCoordinate>
+    <normalCoordinate wavenumber="0.0" units="inverseCentimetre">
+      0.70431617  0.00000000  0.00000000
+     -0.70431617  0.00000000  0.00000000
+    </normalCoordinate>
+    <normalCoordinate wavenumber="0.0" units="inverseCentimetre">
+      0.00000000 -0.52365631  0.00000000
+      0.00000000  0.84729370  0.00000000
+    </normalCoordinate>
+    <normalCoordinate wavenumber="0.0" units="inverseCentimetre">
+      0.00000000  0.00000000  0.70431617
+      0.00000000  0.00000000  0.70431617
+    </normalCoordinate>
+    <normalCoordinate wavenumber="0.0" units="inverseCentimetre">
+      0.70431617  0.00000000  0.00000000
+      0.70431617  0.00000000  0.00000000
+    </normalCoordinate>
+    <normalCoordinate wavenumber="0.0" units="inverseCentimetre">
+      0.00000000  0.84729370  0.00000000
+      0.00000000  0.52365631  0.00000000
+    </normalCoordinate>
+   </vibrations>
+
+ Recomputing wavefunction at initial geometry
+   <jobstep command="HF-SCF" commandset="SCFPRO">
+    <!--
+    --><property name="Energy" method="RHF" principal="true" stateSymmetry="1" stateNumber="1"
+      value="-1.1268278255009"/><!--
+    --><property name="Dipole moment" method="RHF" principal="true" stateSymmetry="1"
+      stateNumber="1" value="0.0 0.0 0.0"/><!--
+    -->
+    <time start="17:42:14" end="17:42:14" cpu="0.04" system="0.0" real="0.04"/>
+    <storage units="megabyte" memory="65.84" sf="0.0" df="12.76" eaf="0.0"/>
+   </jobstep>
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      19        7.51       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1300     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
+
+              2       7        0.31       700     1000      520     2100     5300     5400     5450   
+                                         GEOM     BASIS   MCVARS     RHF     HESS     FREQ     NMOD   
+
+ PROGRAMS   *        TOTAL      FREQ      OPTG        HF       INT
+ CPU TIMES  *         0.55      0.15      0.31      0.01      0.01
+ REAL TIME  *         0.88 SEC
+ DISK USED  *        12.76 MB      
+ **********************************************************************************************************************************
+   <time start="17:42:13" end="17:42:14" cpu="0.15" system="0.06" real="0.27"/>
+   <storage units="megabyte" memory="65.84" sf="0.0" df="12.76" eaf="0.0"/>
+  </jobstep><!--
+ SETTING TITLE          =    ../input/h2_6-31G_freq.mld 
+
+ Dump information in style MOLDEN to ../input/h2_6-31g_freq.mld                                                      
+
+ Molecular orbitals read from record     2100.2  Type=RHF/CANONICAL (state 1.1)
+ Occupation numbers read from record     2100.2  Type=RHF/RHF (state 1.1)
+ Orbital energies read from record       2100.2  Type=RHF/CANONICAL (state 1.1)
+ Redundancy group numbers read from rec  2100.2  Type=RHF/RHF (state 1.1)
+ 
+ DUMP ORBITAL  1.1 AS ORBITAL    1  occ=    2.0000  eig=   -0.5989  GROUP=   2
+
+ Total charge:       2.000000
+ Frequency information read from record  5400.2
+
+ **********************************************************************************************************************************
+
+        OPTG(HF)        HF-SCF  
+     -1.12682783     -0.91627126
+ **********************************************************************************************************************************
+ Variable memory released
+  --><stm:metadataList>
+   <stm:metadata name="dc:date" content="2016-02-18T17:42:14-00:00"/>
+   <stm:metadata name="dc:creator" content="s1267651"/>
+   <stm:metadata name="dc:title" content="H2"/>
+   <stm:metadata name="cmlm:insilico" content="Molpro"/>
+  </stm:metadataList><!--
+  --><platform>
+   <version major="2012" minor="1" SHA="960ce83de8be0427555cf121dea4debc26c720b5"
+     integer_bits="64" parallelism="serial">
+    2012.1
+    <date year="2016" month="2" day="18" hour="17" minute="42" second="13">
+     2016-02-18T17:42:13
+    </date>
+   </version>
+   <licence id="edinburgh"/>
+   <parallel processes="1" nodes="1" all_processes="1" openmp="1"/>
+   <machine hostname="sce-chem-c01105" architecture="x86_64">
+    Linux-3.2.0-98-generic/sce-chem-c01105(x86_64) 64 bit serial version
+    <sysinfo name="cpu MHz" content="3101.000"/>
+    <sysinfo name="MemTotal" content="16321064 kB"/>
+    <sysinfo name="vendor_id" content="GenuineIntel"/>
+    <sysinfo name="cpu family" content="6"/>
+    <sysinfo name="model name" content="Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz"/>
+    <sysinfo name="flags"
+      content="fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx lahf_lm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid"/>
+    <sysinfo name="MemTotal" content="16321064 kB"/>
+    <sysinfo name="cache size" content="6144 KB"/>
+    <sysinfo name="ncpu" content="4"/>
+   </machine>
+  </platform><!--
+  -->
+  <input>
+   <p> ***,H2 </p>
+   <p>                                                                                 ! basis set, </p>
+   <p> $bset=6-31G </p>
+   <p> basis=$bset </p>
+   <p> geometry={ </p>
+   <p>                                                                                 ! geometry here, </p>
+   <p> H 0.0 0.0 -1.0 </p>
+   <p> H 0.0 0.0 1.0 </p>
+   <p> } </p>
+   <p> hf </p>
+   <p> optg </p>
+   <p> freq </p>
+   <p> $title='../input/h2_$bset_freq.mld' </p>
+   <p> put,molden,$title </p>
+  </input>
+  <!--
+ --></job><!--
+--></molpro>

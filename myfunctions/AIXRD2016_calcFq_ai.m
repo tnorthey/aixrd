@@ -1,4 +1,4 @@
-function[Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim)
+function[Fat,Fmol,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim)
 
 % Setup q-array,
 [C,Q,Qe,Qi,Fq,~] = setupq(Nq,wl,dim);
@@ -217,7 +217,8 @@ end % end loop over Gaussian products
 
 %========================================
 % For checking purposes,
-Fq=Fii+Fij;   % add diagonal and non-diagonal terms
+Fat=Fii; Fmol=Fij;  % atomic and molecular terms
+Fq=Fat+Fmol;   % add diagonal and non-diagonal terms
 maxFq=max(max(max(abs(Fq)))); % fmax = f(q=0) = Nelec
 Nelec=maxFq;
 Nelec0=sum(Atoms(:,2));       % Nelec from molden file
