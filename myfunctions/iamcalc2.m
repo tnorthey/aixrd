@@ -1,4 +1,4 @@
-function[Iq]=iamcalc2(Atoms,q)
+function[Ideb]=iamcalc2(Atoms,q)
 % Approx. form factor equation from: 
 % http://lamp.tu-graz.ac.at/~hadley/ss1/crystaldiffraction/atomicformfactors/formfactors.php
 % Uses Debye approx for orientational averaged diffraction pattern
@@ -13,19 +13,21 @@ X=Atoms(:,2);
 Y=Atoms(:,3);
 Z=Atoms(:,4);
 
-Iq=zeros(1,Nq);
+Imol=zeros(1,Nq);
+Iat=Imol;
 for j1=1:Nat
     for j2=1:Nat           
         rij=sqrt((X(j1)-X(j2))^2+(Y(j1)-Y(j2))^2+(Z(j1)-Z(j2))^2);
         for i=1:Nq
             brac=q(i)*rij;
             if brac>1e-9
-               Iq(i) = Iq(i) + formfact(ZZ(j1),q(i)).*formfact(ZZ(j2),q(i)).*sin(brac)./brac;
+               Imol(i) = Imol(i) + formfact(ZZ(j1),q(i)).*formfact(ZZ(j2),q(i)).*sin(brac)./brac;
             else
-               Iq(i) = Iq(i) + formfact(ZZ(j1),q(i)).*formfact(ZZ(j2),q(i));
+               Iat(i) = Iat(i) + formfact(ZZ(j1),q(i)).*formfact(ZZ(j2),q(i));
             end    
         end
     end
 end
+Ideb=Iat+Imol;
 
 return

@@ -1,21 +1,21 @@
 
- Primary working directories    : /tmp/s1267651
- Secondary working directories  : /tmp/s1267651
- Wavefunction directory         : /home/s1267651/wfu/
- Main file repository           : /tmp/s1267651/
+ Primary working directories    : /tmp/thomas
+ Secondary working directories  : /tmp/thomas
+ Wavefunction directory         : /home/thomas/wfu/
+ Main file repository           : /tmp/thomas/
 
- SHA1      : 960ce83de8be0427555cf121dea4debc26c720b5
- NAME      : 2012.1.960ce83
+ SHA1      : a50ba034cb0e600624eb5c2d7633d980c5556ed7
+ NAME      : 2012.1.35
  ARCHNAME  : Linux/x86_64
- FC        : /opt/intel/composer_xe_2013_sp1.2.144/bin/intel64/ifort
- FCVERSION : 14.0.2
- BLASLIB   : -Wl,-_start-group /opt/intel/mkl/lib/intel64/libmkl_intel_ilp64.a /opt/intel/mkl/lib/intel64/libmkl_sequential.a /opt/intel/mkl/lib/intel64/libmkl_core.a -Wl,-_end-group
+ FC        : /usr/bin/gfortran
+ FCVERSION : 4.8.4
+ BLASLIB   : 
  id        : edinburgh
 
- Nodes          nprocs
- sce-chem-c01105    1
+ Nodes              nprocs
+ thomas-Latitude-XT2    1
 
- Using customized tuning parameters: mindgm=7; mindgv=24; mindgc=1; mindgr=1; noblas=0; minvec=7
+ Using customized tuning parameters: mindgm=1; mindgv=20; mindgc=4; mindgr=1; noblas=0; minvec=7
  default implementation of scratch files=df  
 
  ***,H2
@@ -38,9 +38,9 @@
  put,molden,$title
  
 
- Variables initialized (778), CPU time= 0.00 sec
- Commands  initialized (547), CPU time= 0.01 sec, 516 directives.
- Default parameters read. Elapsed time= 0.04 sec
+ Variables initialized (782), CPU time= 0.01 sec
+ Commands  initialized (547), CPU time= 0.02 sec, 517 directives.
+ Default parameters read. Elapsed time= 0.06 sec
 
  Checking input...
  Passed
@@ -50,15 +50,15 @@
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                          Copyright, University College Cardiff Consultants Limited, 2008
 
-                                    Version 2012.1 linked Apr  1 2014 15:33:03
+                                    Version 2012.1 linked Feb 20 2016 17:12:56
 
 
  **********************************************************************************************************************************
  LABEL *   H2                                                                            
- Linux-3.2.0-98-generic/sce-chem-c01105(x86_64) 64 bit serial version                    DATE: 18-Feb-16          TIME: 17:42:13  
+ Linux-3.13.0-77-generic/thomas-Latitude-XT2(x86_64) 64 bit serial version               DATE: 20-Feb-16          TIME: 17:20:16  
  **********************************************************************************************************************************
 
- SHA1:             960ce83de8be0427555cf121dea4debc26c720b5
+ SHA1:             a50ba034cb0e600624eb5c2d7633d980c5556ed7
  **********************************************************************************************************************************
  SETTING BSET           =    6-31G
 
@@ -125,8 +125,8 @@ Geometry recognized as XYZ
 
  Memory used in sort:       0.56 MW
 
- SORT1 READ         128. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.00 SEC
- SORT2 READ          39. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.00 SEC
+ SORT1 READ         128. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.01 SEC
+ SORT2 READ          39. AND WROTE          39. INTEGRALS IN      1 RECORDS. CPU TIME:     0.00 SEC, REAL TIME:     0.01 SEC
 
  FILE SIZES:   FILE 1:     7.8 MBYTE,  FILE 4:     4.2 MBYTE,   TOTAL:     12.0 MBYTE
 
@@ -141,9 +141,9 @@ Geometry recognized as XYZ
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         0.08      0.01
- REAL TIME  *         0.12 SEC
- DISK USED  *        12.27 MB      
+ CPU TIMES  *         0.22      0.04
+ REAL TIME  *         0.60 SEC
+ DISK USED  *        12.28 MB      
  **********************************************************************************************************************************
 
 1PROGRAM * RHF-SCF (CLOSED SHELL)       Authors: W. Meyer, H.-J. Werner
@@ -168,11 +168,11 @@ Geometry recognized as XYZ
  Wave function symmetry:    1
 
  ITERATION    DDIFF          GRAD             ENERGY        2-EL.EN.            DIPOLE MOMENTS         DIIS   ORB.
-    1      0.000D+00      0.000D+00        -0.91624654      0.847558    0.00000    0.00000    0.00000    0    start
-    2      0.000D+00      0.379D-02        -0.91627064      0.845920    0.00000    0.00000    0.00000    1    diag
-    3      0.358D-02      0.602D-03        -0.91627126      0.845613    0.00000    0.00000    0.00000    2    diag
-    4      0.676D-03      0.952D-07        -0.91627126      0.845613    0.00000    0.00000    0.00000    3    diag
-    5      0.633D-07      0.389D-07        -0.91627126      0.845612    0.00000    0.00000    0.00000    0    orth
+    1      0.000D+00      0.000D+00        -0.91625224      0.847318    0.00000    0.00000    0.00000    0    start
+    2      0.000D+00      0.333D-02        -0.91627078      0.845883    0.00000    0.00000    0.00000    1    diag
+    3      0.314D-02      0.528D-03        -0.91627126      0.845613    0.00000    0.00000    0.00000    2    diag
+    4      0.593D-03      0.733D-07        -0.91627126      0.845613    0.00000    0.00000    0.00000    3    diag
+    5      0.487D-07      0.299D-07        -0.91627126      0.845612    0.00000    0.00000    0.00000    0    orth
 
  Final occupancy:   1   0   0   0   0
 
@@ -204,13 +204,13 @@ Geometry recognized as XYZ
                                          1400     1410     1200     1210     1080     1600     1650     1300     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
-              2       4        0.30       700     1000      520     2100   
+              2       4        2.76       700     1000      520     2100   
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL        HF       INT
- CPU TIMES  *         0.09      0.01      0.01
- REAL TIME  *         0.13 SEC
- DISK USED  *        12.27 MB      
+ CPU TIMES  *         0.28      0.06      0.04
+ REAL TIME  *         0.71 SEC
+ DISK USED  *        12.28 MB      
  **********************************************************************************************************************************
 
 
@@ -219,7 +219,7 @@ Geometry recognized as XYZ
 
  BFGS update of hessian
 
- *** Long output written to logfile /home/s1267651/phd_mini_19Jan2016/chapter2projects/vibavg/molpro2/h2_6-31g_freq.log ***
+ *** Long output written to logfile /home/thomas/aixrd/molpro2/h2_6-31g_freq.log ***
 
 
  Geometry optimization using default procedure for command HF-SCF
@@ -231,17 +231,17 @@ Geometry recognized as XYZ
  Quadratic Steepest Descent - Minimum Search
 
  ITER.   ENERGY(OLD)    ENERGY(NEW)      DE          GRADMAX     GRADNORM    GRADRMS     STEPMAX     STEPLEN     STEPRMS   CPU-time
-   1    -0.91627126    -0.96851550    -0.05224424  0.10466638  0.10466638  0.10466638  0.45000050  0.45000050  0.31819841      0.03
-   2    -0.96851550    -1.03061027    -0.06209477  0.12754200  0.12754200  0.12754200  0.44999949  0.44999949  0.31819769      0.06
-   3    -1.03061027    -1.11494904    -0.08433877  0.14698320  0.14698320  0.14698320  0.60000038  0.60000038  0.42426434      0.09
-   4    -1.11494904    -0.97958566     0.13536339  0.10385632  0.10385632  0.10385632  0.59999980  0.59999980  0.42426393      0.11
-   5    -0.97958566    -1.11991539    -0.14032974  1.08860595  1.08860595  1.08860595  0.54774342  0.54774342  0.38731308      0.13
-   6    -1.11991539    -1.12297535    -0.00305995  0.08539268  0.08539268  0.08539268  0.03984100  0.03984100  0.02817184      0.17
-   7    -1.12297535    -1.12586067    -0.00288532  0.06762338  0.06762338  0.06762338  0.15162008  0.15162008  0.10721159      0.19
-   8    -1.12586067    -1.12676602    -0.00090535  0.04309709  0.04309709  0.04309709  0.05901695  0.05901695  0.04173129      0.22
-   9    -1.12676602    -1.12682706    -0.00006104  0.00988846  0.00988846  0.00988846  0.01101407  0.01101407  0.00778812      0.25
-  10    -1.12682706    -1.12682782    -0.00000076  0.00111710  0.00111710  0.00111710  0.00140273  0.00140273  0.00099188      0.28
-  11    -1.12682782    -1.12682783    -0.00000000  0.00003409  0.00003409  0.00003409  0.00004154  0.00004154  0.00002938      0.31
+   1    -0.91627126    -0.96851550    -0.05224424  0.10466638  0.10466638  0.10466638  0.45000050  0.45000050  0.31819841      0.15
+   2    -0.96851550    -1.03061027    -0.06209477  0.12754200  0.12754200  0.12754200  0.44999949  0.44999949  0.31819769      0.31
+   3    -1.03061027    -1.11494904    -0.08433877  0.14698320  0.14698320  0.14698320  0.60000038  0.60000038  0.42426434      0.48
+   4    -1.11494904    -0.97958565     0.13536339  0.10385632  0.10385632  0.10385632  0.59999981  0.59999981  0.42426393      0.65
+   5    -0.97958565    -1.11991539    -0.14032974  1.08860596  1.08860596  1.08860596  0.54774342  0.54774342  0.38731309      0.81
+   6    -1.11991539    -1.12297535    -0.00305995  0.08539268  0.08539268  0.08539268  0.03984100  0.03984100  0.02817184      0.96
+   7    -1.12297535    -1.12586067    -0.00288532  0.06762338  0.06762338  0.06762338  0.15162008  0.15162008  0.10721159      1.14
+   8    -1.12586067    -1.12676602    -0.00090535  0.04309710  0.04309710  0.04309710  0.05901696  0.05901696  0.04173129      1.31
+   9    -1.12676602    -1.12682706    -0.00006104  0.00988846  0.00988846  0.00988846  0.01101407  0.01101407  0.00778812      1.47
+  10    -1.12682706    -1.12682782    -0.00000076  0.00111710  0.00111710  0.00111710  0.00140273  0.00140273  0.00099188      1.62
+  11    -1.12682782    -1.12682783    -0.00000000  0.00003409  0.00003409  0.00003409  0.00004154  0.00004154  0.00002938      1.78
 
  END OF GEOMETRY OPTIMIZATION.
 
@@ -264,13 +264,13 @@ Geometry recognized as XYZ
                                          1400     1410     1200     1210     1080     1600     1650     1300     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
-              2       4        0.30       700     1000      520     2100   
+              2       4        2.76       700     1000      520     2100   
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL      OPTG        HF       INT
- CPU TIMES  *         0.40      0.31      0.01      0.01
- REAL TIME  *         0.61 SEC
- DISK USED  *        12.34 MB      
+ CPU TIMES  *         2.06      1.78      0.06      0.04
+ REAL TIME  *         3.37 SEC
+ DISK USED  *        14.80 MB      
  **********************************************************************************************************************************
 
 
@@ -283,14 +283,14 @@ Geometry recognized as XYZ
  Using no symmetry in wavefunction calculations
 
  Running default procedure: HF-SCF000
- 
+
 
  Numerically approximating hessian using central gradient differences
 
  Task list generated. Total number of displacements:      4
 
 
- Numerical HF-SCF000 hessian completed. CPU-time:     0.17 sec, Elapsed:     0.18 sec
+ Numerical HF-SCF000 hessian completed. CPU-time:     0.91 sec, Elapsed:     0.91 sec
 
  HF-SCF hessian saved to record  5300.2
 
@@ -304,9 +304,9 @@ Geometry recognized as XYZ
 
  Dipole Moment Derivatives [debye/ang]
                    1             2             3             4             5             6
-         1    -0.0000000     0.0000000     0.0000000    -0.0000000     0.0000000     0.0000000
-         2     0.0000000    -0.0000000     0.0000000     0.0000000    -0.0000000     0.0000000
-         3     0.0000000     0.0000000    -0.0000000     0.0000000     0.0000000    -0.0000000
+         1    -0.0000000     0.0000000     0.0000000    -0.0000000     0.0000000    -0.0000000
+         2     0.0000000    -0.0000000     0.0000000     0.0000000    -0.0000000    -0.0000000
+         3     0.0000000     0.0000000    -0.0000000    -0.0000000    -0.0000000    -0.0000000
 
  Projecting out rotations and translations
 
@@ -342,10 +342,10 @@ Geometry recognized as XYZ
  Wavenumbers [cm-1]         4646.33
  Intensities [km/mol]          0.00
  Intensities [relative]        0.00
-           GX1              0.00000
-           GY1              0.00000
+           GX1             -0.00000
+           GY1             -0.00000
            GZ1              0.70432
-           GX2              0.00000
+           GX2             -0.00000
            GY2              0.00000
            GZ2             -0.70432
 
@@ -356,12 +356,12 @@ Geometry recognized as XYZ
  Wavenumbers [cm-1]            0.00        0.00        0.00        0.00        0.00
  Intensities [km/mol]          0.00        0.00        0.00        0.00        0.00
  Intensities [relative]        0.00        0.00        0.00        0.00        0.00
-           GX1              0.00000     0.70432     0.00000     0.00000     0.70432
-           GY1              0.84729     0.00000     0.00000    -0.52366     0.00000
-           GZ1              0.00000     0.00000     0.70432     0.00000     0.00000
-           GX2              0.00000     0.70432     0.00000     0.00000    -0.70432
-           GY2              0.52366     0.00000     0.00000     0.84729     0.00000
-           GZ2              0.00000     0.00000     0.70432     0.00000     0.00000
+           GX1             -0.00000     0.70432     0.00000     0.70432     0.00000
+           GY1              0.70432     0.00000     0.70432    -0.00000     0.00000
+           GZ1             -0.00000    -0.00000    -0.00000     0.00000     0.70432
+           GX2              0.00000     0.70432     0.00000    -0.70432     0.00000
+           GY2              0.70432     0.00000    -0.70432     0.00000     0.00000
+           GZ2             -0.00000    -0.00000    -0.00000     0.00000     0.70432
 
 
  Zero point energy:  0.01058511 [H]     2323.16 [1/CM]       27.79 [KJ/MOL]
@@ -374,7 +374,7 @@ Geometry recognized as XYZ
  Occupation numbers read from record     2100.2  Type=RHF/RHF (state 1.1)
  Orbital energies read from record       2100.2  Type=RHF/CANONICAL (state 1.1)
  Redundancy group numbers read from rec  2100.2  Type=RHF/RHF (state 1.1)
- 
+
  DUMP ORBITAL  1.1 AS ORBITAL    1  occ=    2.0000  eig=   -0.5989  GROUP=   2
 
  Total charge:       2.000000
