@@ -1,4 +1,6 @@
 title  Nq  wl  dim  method
 
-h2_6-31g_freq 49 3.0 sph ai
-h2_6-31g_freq 49 3.0 sph iam
+template1 9 3.0 sph ai
+template2 9 3.0 sph ai
+template1 49 3.0 sph iam
+template2 49 3.0 sph iam

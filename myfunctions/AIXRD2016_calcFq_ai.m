@@ -1,89 +1,20 @@
-function[Fat,Fmol,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim)
+function[Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim)
 
+% Ab initio x-ray diffraction method,
+disp('Using ab initio method...') 
+
+%========================================
 % Setup q-array,
 [C,Q,Qe,Qi,Fq,~] = setupq(Nq,wl,dim);
 
-% Read Atom information from molden file,
-Atoms = Atomsread(mldfile);
+% Read from molden file
+[b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc,~,Atoms,~,~,~] = mldread_g(mldfile,0);
 
-%========================================
-% calculate Fq
+Fii=zeros(size(Fq));  % diagonal terms
+Fij=Fii;              % unique non-diagonal terms   
 
-[b,M,ga,c,l,m,n,xx,yy,zz,ppmo,moocc,~,~,~,~,~] = mldread_g(mldfile,0);
-
-Fii=zeros(size(Fq));
-Fij=Fii;
-
-% Ab initio x-ray diffraction method,
-disp('Using ab initio method...')    
-cutoff=1e-9;    
-Ng=length(c); % number of primitives
-
-li=l;mi=m;ni=n;
-% 3D GTO coordinates,
-ri=[xx yy zz];
-
-%========================================
-% GTO normalisation,
-% Normalisation factors in front of each prim. Gaussian
-normA=(2/pi)^0.75;
-normB=2.^(li+mi+ni);
-normC=ga.^((2*li+2*mi+2*ni+3)/4);
-normD=factd(2*li-ones(size(li))) .* factd(2*mi-ones(size(mi))) .* factd(2*ni-ones(size(ni)));
-nrmi= normA .* normB .* normC ./ normD.^ 0.5;
-
-gm = 2*ga;   % exponent addition
-gu = gm.^-1;     
-
-% pre-coeffs,
-pre0=(pi*gu).^1.5.*b.*nrmi.^2.*M.^2.*c.^2;
-
-for i=1:Ng     % diagonal terms i=j
-
-    if pre0(i)>0   % only calculate for non-zero terms
-
-        ex1=ones(size(Fq));                         % exponential term
-
-        % 3D vector for convenience,
-        Li=[li(i) mi(i) ni(i)];
-
-        for j=1:3                                   % loop over x,y,z / l,m,n           
-
-            ply=1;                                  % Li=Lj=0, polynomial term    
-
-            if Li(j)==1
-                A = Qi{j}*gu(i)+ri(i,j);
-                Ri=ri(i,j);
-                ply = A.^2+.5*gu(i)-2*Ri*A+Ri^2;               
-            elseif Li(j)>1    
-                ply=zeros(size(Fq));
-                Ri=ri(i,j);
-                for mm=0:2*Li(j)
-                    v=2*Li(j)-mm;
-                    for p=0:v
-                        if mod(v-p,2) == 0 % if even   
-                            ply = ply +...
-                            nchoosek(2*Li(j),mm)*nchoosek(v,p)...
-                            *(-Ri)^mm*(Ri+Qi{j}*gu(i)).^p...
-                            *factd(v-p-1)*((.5*gu(i))^(.5*(v-p)));
-                        end
-                    end
-                end                     
-            end    % end if
-
-            % exponential terms; Gaussian and phase,
-            ex1=ex1.*ply.*exp(Qe{j}*gu(i)+1i*Q{j}*ri(i,j));
-
-        end
-
-        % a special case of atomic terms (i=j),
-        Fii = Fii + pre0(i)*ex1;  
-    end
-
-end % end loop over Gaussian primitives
-
-% when i not equal to j...
 % Find indices of GTO products with pre-coeffs > cutoff,
+cutoff=1e-9; % reasonable default
 [I,J] = find_significant_gtos3(M,c,ga,xx,yy,zz,ppmo,1,moocc,cutoff);
 % make arrays correspinding to these indices,
 bi=b(I);Mi=M(I);Mj=M(J);ci=c(I);cj=c(J);li=l(I);lj=l(J);mi=m(I);mj=m(J);
@@ -137,6 +68,8 @@ for j=1:3
     rij(:,j) = (gi.*ri(:,j)+gj.*rj(:,j)).*gu;   % weighted GTO centre
 end
 
+%========================================
+% calculate Fq
 for i = 1:Ngp                   % loop through significant GTO products    
 
     ex1=ones(size(Fq));                         % exponential term
@@ -208,17 +141,16 @@ for i = 1:Ngp                   % loop through significant GTO products
 
     end
 
-    if ri(i,:)==rj(i,:)
-        Fii = Fii + 2*pre0(i)*ex1;    % atomic terms
+    if I(i)==J(i)
+        Fii = Fii + pre0(i)*ex1;  % diagonal terms
     else
-        Fij = Fij + 2*pre0(i)*ex1;  % molecular terms
+        Fij = Fij + pre0(i)*ex1;  % unique off-diagonal terms
     end
 end % end loop over Gaussian products
 
 %========================================
 % For checking purposes,
-Fat=Fii; Fmol=Fij;  % atomic and molecular terms
-Fq=Fat+Fmol;   % add diagonal and non-diagonal terms
+Fq=Fii+2*Fij;   % add diagonal and non-diagonal terms
 maxFq=max(max(max(abs(Fq)))); % fmax = f(q=0) = Nelec
 Nelec=maxFq;
 Nelec0=sum(Atoms(:,2));       % Nelec from molden file

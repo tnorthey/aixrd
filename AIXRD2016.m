@@ -87,8 +87,7 @@ rtitle=strcat(rtitle,'_',method,'_',dim,'_Nq',num2str(Nq),'_wl',num2str(wl));
 if strcmpi(method,'iam')
     [Fq,Atoms,C]=AIXRD2016_calcFq_iam(mldfile,Nq,wl,dim);
 elseif strcmpi(method,'ai')
-    [Fat,Fmol,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim);
-    Fq=Fat+Fmol;
+    [Fq,Atoms,C]=AIXRD2016_calcFq_ai(mldfile,Nq,wl,dim);
 end
 Iq=abs(Fq).^2;     % Intensity is form-factor absolute squared ff*
 %================================================================================
@@ -97,18 +96,12 @@ if strcmp(dim,'sph')
     Irot=rotavg0(C{2},C{3},Iq);  % ensemble-average (each particle scatters incoherently)
     Ideb=iamcalc2(Atoms(:,2:end),C{1});  % Debye approx.
     Frot=rotavg0(C{2},C{3},Fq);  % particle scatters coherently (with itself usually)
-    if strcmp(method,'ai')
-        Iat_rot=rotavg0(C{2},C{3},abs(Fat).^2);
-        Imol_rot=rotavg0(C{2},C{3},abs(Fmol).^2);
-    end
 end
 %================================================================================
 % SAVE to output
 % save output variables in .mat file
 matname=strcat('results/',rtitle,'.mat');
-if strcmp(dim,'sph') && strcmp(method,'ai')
-    save(matname,'rtitle','Fq','C','Frot','Irot','Ideb','Iat_rot','Imol_rot');
-elseif strcmp(dim,'sph') && strcmp(method,'iam')
+if strcmp(dim,'sph')
     save(matname,'rtitle','Fq','C','Frot','Irot','Ideb');
 elseif strfind(dim,'det')
     save(matname,'rtitle','Fq','C');

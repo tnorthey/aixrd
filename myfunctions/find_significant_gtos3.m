@@ -9,7 +9,7 @@ mos=mo2-mo1+1;
 pre=zeros(mos*ppmo,mos*ppmo);
 for mo=mo1:mo2                             % loop through MOs
     for i = (mo-1)*ppmo+1:mo*ppmo          % loop through GTOs
-        for j = i+1:mo*ppmo                % for j>i
+        for j = i:mo*ppmo                  % for j>=i
            
             % GTO overlap,
             gm=ga(i)+ga(j);
